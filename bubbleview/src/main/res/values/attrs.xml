@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BubbleView">
+        <!--        指向方向-->
+        <attr name="bubbleIndicatorDirection" format="integer">
+            <enum name="left" value="0" />
+            <enum name="top" value="1" />
+            <enum name="right" value="2" />
+            <enum name="bottom" value="3" />
+        </attr>
+        <!--        子控件是否填充指针处小三角形-->
+        <attr name="bubbleFillIndicator" format="boolean" />
+        <!--       气泡颜色-->
+        <attr name="bubbleColor" format="color" />
+        <!--    指示器高度，与圆角矩形垂直的边的长度-->
+        <attr name="bubbleIndicatorHeight" format="dimension" />
+        <!--        指示器宽度，贴着圆角矩形部分的长度-->
+        <attr name="bubbleIndicatorWidth" format="dimension" />
+        <!--        圆角半径-->
+        <attr name="bubbleRadius" format="dimension" />
+        <attr name="bubbleElevation" format="dimension" />
+        <!--        阴影颜色-->
+        <attr name="bubbleShadowColor" format="color" />
+
+
+        <!--        指示器位置
+        以指示器向左为例：
+        start：指示器在上方，会留出圆角位置
+        centre：指示器在中间，默认值
+        end：指示器在下方，会留出圆角位置
+        float类型范围在0-1之间，0对应start，0.5对应centre，1对应end
+        dimension 0:中间，正数：从开始位置偏移，负数：从结束位置开始偏移
+        -->
+        <attr name="bubbleIndicatorLocation" format="dimension|float">
+            <enum name="start" value="0" />
+            <enum name="centre" value="1" />
+            <enum name="end" value="2" />
+        </attr>
+
+        //2020-6-2 09:19:15 v3 新增
+        <attr name="bubbleMaxWidth" format="dimension" />
+        <attr name="bubbleMaxHeight" format="dimension" />
+        <attr name="bubbleMinWidth" format="dimension" />
+        <attr name="bubbleMinHeight" format="dimension" />
+
+        //2020-6-24 17:19:35 v4 新增，线条宽度
+        <attr name="bubbleStrokeWidth" format="dimension" />
+    </declare-styleable>
+</resources>
