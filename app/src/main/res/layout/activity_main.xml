@@ -1,108 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#2403DAC5"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
-
-    <pw.xiaohaozi.bubbleview.BubbleView
-        android:id="@+id/bv_defaule"
-        android:layout_width="wrap_content"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:padding="8dp">
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
 
-        <TextView
+        <pw.xiaohaozi.bubbleview.BubbleView
+            android:id="@+id/bv_defaule"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="默认样式气泡"
-            android:textColor="@color/colorPrimary"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-    </pw.xiaohaozi.bubbleview.BubbleView>
+            android:layout_margin="8dp"
+            android:padding="8dp">
 
-    <pw.xiaohaozi.bubbleview.BubbleView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="8dp"
-        android:padding="8dp"
-        app:bubbleElevation="8dp"
-        app:bubbleIndicatorDirection="bottom"
-        app:bubbleIndicatorLocation="centre"
-        app:bubbleShadowColor="#00ff00"
-        app:bubbleStrokeWidth="1dp">
-
-        <TextView
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="默认样式气泡"
+                android:textColor="@color/colorPrimary"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </pw.xiaohaozi.bubbleview.BubbleView>
+        <pw.xiaohaozi.bubbleview.BubbleView
+            android:id="@+id/bubble_view_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="
-阴影颜色：绿色\n
-指示器方向：向下\n
-指示器位置：居中\n
-边线宽度：1dp\n
-高度：8dp\n
-下面这个气泡将内容填充到了指示器里\n默认不填充
-"
-            android:textColor="@color/colorPrimary" />
-    </pw.xiaohaozi.bubbleview.BubbleView>
+            android:layout_margin="8dp"
+            app:bubbleElevation="8dp"
+            app:bubbleFillIndicator="true"
+            app:bubbleIndicatorDirection="left"
+            app:bubbleIndicatorHeight="8dp"
+            app:bubbleIndicatorLocation="start"
+            app:bubbleIndicatorWidth="16dp"
+            app:bubbleShadowColor="#ff0000"
+            app:bubbleStrokeWidth="1dp">
 
-    <pw.xiaohaozi.bubbleview.BubbleView
-        android:id="@+id/bv_guanji"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        app:bubbleColor="@color/colorAccent"
-        app:bubbleElevation="8dp"
-        app:bubbleFillIndicator="true"
-        app:bubbleIndicatorDirection="right"
-        app:bubbleIndicatorLocation="start"
-
-        app:bubbleRadius="8dp"
-        app:bubbleShadowColor="#00ff00">
-
-
-        <ImageView
-            android:layout_width="120dp"
-            android:layout_height="200dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/timg" />
-
-
-    </pw.xiaohaozi.bubbleview.BubbleView>
-
-    <pw.xiaohaozi.bubbleview.BubbleView
-        android:id="@+id/bubble_view_4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        app:bubbleElevation="8dp"
-        app:bubbleFillIndicator="true"
-        app:bubbleIndicatorDirection="left"
-        app:bubbleIndicatorHeight="8dp"
-        app:bubbleIndicatorLocation="start"
-        app:bubbleIndicatorWidth="16dp"
-        app:bubbleShadowColor="#00ff00"
-        app:bubbleStrokeWidth="1dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:text="
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="
         自定义指示器\n
         app:bubbleElevation=&quot;8dp&quot;\n
-        app:bubbleShadowColor=&quot;#00ff00&quot;\n
+        app:bubbleShadowColor=&quot;#ff0000&quot;\n
         app:bubbleFillIndicator=&quot;false&quot;\n
         app:bubbleIndicatorHeight=&quot;8dp&quot;\n
         app:bubbleIndicatorWidth=&quot;8dp&quot;\n
         app:bubbleIndicatorDirection=&quot;left&quot;\n
         app:bubbleStrokeWidth=&quot;1dp&quot;\n
         app:bubbleIndicatorLocation=&quot;start&quot;"
-            android:textColor="#00ff00" />
-    </pw.xiaohaozi.bubbleview.BubbleView>
-</LinearLayout>
+                android:textColor="#ff0000" />
+        </pw.xiaohaozi.bubbleview.BubbleView>
+        <pw.xiaohaozi.bubbleview.BubbleView
+            android:id="@+id/bubble_view_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:bubbleElevation="8dp"
+            android:layout_gravity="right"
+            app:bubbleFillIndicator="true"
+            app:bubbleIndicatorDirection="right"
+            app:bubbleIndicatorHeight="8dp"
+            app:bubbleIndicatorLocation="start"
+            app:bubbleIndicatorWidth="16dp"
+            app:bubbleShadowColor="@android:color/white"
+            app:bubbleColor="@android:color/black"
+            app:bubbleStrokeWidth="1dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="
+        自定义指示器\n
+        app:bubbleElevation=&quot;8dp&quot;\n
+        app:bubbleShadowColor=&quot;#ff0000&quot;\n
+        app:bubbleFillIndicator=&quot;false&quot;\n
+        app:bubbleIndicatorHeight=&quot;8dp&quot;\n
+        app:bubbleIndicatorWidth=&quot;8dp&quot;\n
+        app:bubbleIndicatorDirection=&quot;left&quot;\n
+        app:bubbleStrokeWidth=&quot;1dp&quot;\n
+        app:bubbleIndicatorLocation=&quot;start&quot;"
+                android:textColor="#ff0000" />
+        </pw.xiaohaozi.bubbleview.BubbleView>
+        <pw.xiaohaozi.bubbleview.BubbleView
+            android:id="@+id/bv_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            app:bubbleElevation="8dp"
+
+            app:bubbleIndicatorDirection="bottom"
+            app:bubbleIndicatorLocation="0.8"
+            app:bubbleShadowColor="#ff0000"
+            app:bubbleStrokeWidth="1dp">
+
+            <TextView
+                android:background="@color/colorAccent"
+                android:id="@+id/tv_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="
+阴影颜色：红色\n
+指示器方向：向下\n
+指示器位置：居中\n
+边线宽度：1dp\n
+高度：8dp\n
+下面这个气泡将内容填充到了指示器里\n默认不填充
+"
+                android:textColor="@color/colorPrimary" />
+        </pw.xiaohaozi.bubbleview.BubbleView>
+
+        <pw.xiaohaozi.bubbleview.BubbleView
+            android:id="@+id/bv_guanji"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            app:bubbleColor="@color/colorAccent"
+            app:bubbleElevation="8dp"
+            app:bubbleFillIndicator="true"
+            app:bubbleIndicatorDirection="right"
+            app:bubbleIndicatorLocation="start"
+
+            app:bubbleRadius="8dp"
+            app:bubbleShadowColor="#ff0000">
+
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="200dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/timg" />
+
+
+        </pw.xiaohaozi.bubbleview.BubbleView>
+
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -168,8 +168,6 @@ public class BubbleView extends ViewGroup {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-
-
         //①获取控件的宽高模式和宽高值
         // MeasureSpec.AT_MOST; 至多模式, 控件有多大显示多大, wrap_content
         // MeasureSpec.EXACTLY; 确定模式, 类似宽高写死成dip, match_parent
@@ -337,6 +335,7 @@ public class BubbleView extends ViewGroup {
     private void setPath() {
 //        Log.i(TAG, "onSizeChanged: w = " + w + " h = " + h);
         mPath.reset();
+        mIndicatorPath.reset();
         switch (mIndicatorDirection) {
             case TOP:
                 bubbleTop();
@@ -448,7 +447,6 @@ public class BubbleView extends ViewGroup {
      * 指示器在上边
      */
     private void bubbleTop() {
-
         mPath.addRoundRect(mElevation / 2, mIndicatorHeight + (int) (mElevation * .2f + .5f), w - mElevation / 2,
                 h - (int) (mElevation * .8f + .5f), mRadius, mRadius, Path.Direction.CW);
 
@@ -496,12 +494,10 @@ public class BubbleView extends ViewGroup {
 
     @Override
     protected void onDraw(Canvas canvas) {
-
         mPaint.setShadowLayer(mElevation / 2, 0, mElevation / 4,
                 mShadowColor & 0x00ffffff | 0x88000000);
         mPath.addPath(mIndicatorPath);
-        if (mStrokeWidth > 0)
-            mPath.op(mIndicatorPath, Path.Op.UNION);
+        if (mStrokeWidth > 0) mPath.op(mIndicatorPath, Path.Op.UNION);
         canvas.drawPath(mPath, mPaint);
         canvas.clipPath(mPath);
     }
@@ -516,7 +512,8 @@ public class BubbleView extends ViewGroup {
     public BubbleView setBubbleColor(int bubbleColor) {
         mBubbleColor = bubbleColor;
         mPaint.setColor(mBubbleColor);
-        requestLayout();
+        invalidate();
+//        requestLayout();
         return this;
     }
 
@@ -546,7 +543,8 @@ public class BubbleView extends ViewGroup {
     public BubbleView setShadowColor(int shadowColor) {
         mShadowColor = shadowColor;
         setPath();
-        requestLayout();
+//        requestLayout();
+        invalidate();
         return this;
     }
 
@@ -559,7 +557,8 @@ public class BubbleView extends ViewGroup {
     public BubbleView setIndicatorHeight(int indicatorHeight) {
         mIndicatorHeight = dp2px(indicatorHeight);
         setPath();
-        requestLayout();
+        invalidate();
+//        requestLayout();
         return this;
     }
 
@@ -572,7 +571,8 @@ public class BubbleView extends ViewGroup {
     public BubbleView setIndicatorWidth(int indicatorWidth) {
         mIndicatorWidth = dp2px(indicatorWidth);
         setPath();
-        requestLayout();
+        invalidate();
+//        requestLayout();
         return this;
     }
 
@@ -643,7 +643,8 @@ public class BubbleView extends ViewGroup {
         mBubbleIndicatorLocationType = TypedValue.TYPE_FLOAT;
         location_f = location;
         setPath();
-        requestLayout();
+        invalidate();
+//        requestLayout();
         return this;
     }
 
